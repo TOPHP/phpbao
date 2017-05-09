@@ -1,10 +1,10 @@
 {
 	"host":"127.0.0.1",
 	"user":"root",
-	"passwd":"123456",
-	"db":"lfonepay",
+	"passwd":"",
+	"db":"hxoneshop",
 	"port":3306,
-	"prefix":"lf_",
+	"prefix":"hx_",
 	"charset":"utf8",
 	"party":0
 }
