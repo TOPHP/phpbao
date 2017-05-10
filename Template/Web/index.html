@@ -92,25 +92,29 @@
   			<div class="list-title">
 	  			<h3>最热商品</h3>
   			</div>
-  			<div class="product-list">
-  				<volist name=":R('index/period',array(1,0,8))" id="vo">
-  				<div class="pro-list">
-  					<eq name="vo['position']" value="$pos"><div class="float-title">推荐夺宝</div></eq>
-  					<notempty name="vo['ten_name']"><div class="float-title ten">{$vo['ten_name']}</div></notempty>
-					<div class="topimg"><a href="{$vo.url}"><img src="{$vo.pic}" /></a></div>
-					<div class="reco-ls"><a href="{$vo.url}">{$vo.name}</a></div>
-					<div class="reco-ls huise">总需：{$vo.price} 人次</div>
+			<div class="product-list">
+				<volist name=":R('index/period',array(1,0,8))" id="vo">
+					<div class="pro-list">
+						<eq name="vo['position']" value="$pos">
+							<div class="float-title">推荐夺宝</div>
+						</eq>
+						<notempty name="vo['ten_name']">
+							<div class="float-title ten">{$vo['ten_name']}</div>
+						</notempty>
+						<div class="topimg"><a href="{$vo.url}"><img src="{$vo.pic}"/></a></div>
+						<div class="reco-ls"><a href="{$vo.url}">{$vo.name}</a></div>
+						<div class="reco-ls huise">总需：{$vo.price} 人次</div>
 						<div class="progress">
-						    <span class="orange" style="width: {$vo.jd}%;"></span>
+							<span class="orange" style="width: {$vo.jd}%;"></span>
 						</div>
-					<div class="reco-nb huise">
-						<div class="reco-lnb">{$vo.number}<br>已参与人次</div>
-						<div class="reco-rnb">{$vo['surplus']}<br>剩余人次</div>
+						<div class="reco-nb huise">
+							<div class="reco-lnb">{$vo.number}<br>已参与人次</div>
+							<div class="reco-rnb">{$vo['surplus']}<br>剩余人次</div>
+						</div>
+						<div class="reco-btn"><a href="{$vo.url}" class="btn btn-pink">立即夺宝</a></div>
 					</div>
-					<div class="reco-btn"><a href="{$vo.url}" class="btn btn-pink">立即夺宝</a></div>
-  				</div>
-  				</volist>
-  			</div>
+				</volist>
+			</div>
   		</div>
   		<!-- 最新商品结束 -->
 

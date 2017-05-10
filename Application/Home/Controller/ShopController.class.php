@@ -4,6 +4,7 @@ class ShopController extends WapController {
     public function index(){
 		$id=I('id',0,'intval');
 		$info=D("Shop")->detail($id);
+        echo htmlspecialchars_decode($info['content']);
 		if(!$info){
 			$error = D("Shop")->getError();
         	$this->error(empty($error) ? '未知错误！' : $error);

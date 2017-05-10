@@ -20,4 +20,14 @@ class ShopModel extends Model{
         }
        return $data;
     }
+    public function getShopById($id){
+        if ($id){
+            $data = $this->where('id',$id)->find();
+        }else{
+            return '';
+        }
+    }
+    public function findByPage($page){
+        return $this->page($page)->select();
+    }
 }

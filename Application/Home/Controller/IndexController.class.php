@@ -32,6 +32,7 @@ class IndexController extends WapController {
                     $period_list[$k]['count']=M('shop_record')->where("uid=".$v["uid"]." and pid=".$v["id"])->sum('number');
                 }
             }
+            echo  dump(get_client_ip());
             $this->assign('list',$period_list);
             $this->assign('news',$news);
     		$this->assign('lottery',D('User')->lottery('',1));

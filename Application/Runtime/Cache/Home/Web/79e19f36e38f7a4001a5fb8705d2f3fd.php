@@ -124,23 +124,23 @@
   			<div class="list-title">
 	  			<h3>最热商品</h3>
   			</div>
-  			<div class="product-list">
-  				<?php $_result=R('index/period',array(1,0,8));if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="pro-list">
-  					<?php if(($vo['position']) == $pos): ?><div class="float-title">推荐夺宝</div><?php endif; ?>
-  					<?php if(!empty($vo['ten_name'])): ?><div class="float-title ten"><?php echo ($vo['ten_name']); ?></div><?php endif; ?>
-					<div class="topimg"><a href="<?php echo ($vo["url"]); ?>"><img src="<?php echo ($vo["pic"]); ?>" /></a></div>
-					<div class="reco-ls"><a href="<?php echo ($vo["url"]); ?>"><?php echo ($vo["name"]); ?></a></div>
-					<div class="reco-ls huise">总需：<?php echo ($vo["price"]); ?> 人次</div>
+			<div class="product-list">
+				<?php $_result=R('index/period',array(1,0,8));if(is_array($_result)): $i = 0; $__LIST__ = $_result;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$vo): $mod = ($i % 2 );++$i;?><div class="pro-list">
+						<?php if(($vo['position']) == $pos): ?><div class="float-title">推荐夺宝</div><?php endif; ?>
+						<?php if(!empty($vo['ten_name'])): ?><div class="float-title ten"><?php echo ($vo['ten_name']); ?></div><?php endif; ?>
+						<div class="topimg"><a href="<?php echo ($vo["url"]); ?>"><img src="<?php echo ($vo["pic"]); ?>"/></a></div>
+						<div class="reco-ls"><a href="<?php echo ($vo["url"]); ?>"><?php echo ($vo["name"]); ?></a></div>
+						<div class="reco-ls huise">总需：<?php echo ($vo["price"]); ?> 人次</div>
 						<div class="progress">
-						    <span class="orange" style="width: <?php echo ($vo["jd"]); ?>%;"></span>
+							<span class="orange" style="width: <?php echo ($vo["jd"]); ?>%;"></span>
 						</div>
-					<div class="reco-nb huise">
-						<div class="reco-lnb"><?php echo ($vo["number"]); ?><br>已参与人次</div>
-						<div class="reco-rnb"><?php echo ($vo['surplus']); ?><br>剩余人次</div>
-					</div>
-					<div class="reco-btn"><a href="<?php echo ($vo["url"]); ?>" class="btn btn-pink">立即夺宝</a></div>
-  				</div><?php endforeach; endif; else: echo "" ;endif; ?>
-  			</div>
+						<div class="reco-nb huise">
+							<div class="reco-lnb"><?php echo ($vo["number"]); ?><br>已参与人次</div>
+							<div class="reco-rnb"><?php echo ($vo['surplus']); ?><br>剩余人次</div>
+						</div>
+						<div class="reco-btn"><a href="<?php echo ($vo["url"]); ?>" class="btn btn-pink">立即夺宝</a></div>
+					</div><?php endforeach; endif; else: echo "" ;endif; ?>
+			</div>
   		</div>
   		<!-- 最新商品结束 -->
 
